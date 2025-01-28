@@ -1,9 +1,9 @@
 # watch-webcam
 Simple script to watch the status of the webcam and do some actions.
 
-- switches on Elgato key lights
+- switches on/off Elgato key lights
 - pauses music player
-- disables xscreensaver
+- disables xscreensaver during call
 
 Everything is hardcoded:
 - programs to watch: "(cheese|MainThread|firefox|zoom|GeckoMain|teams)"
