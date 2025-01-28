@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "watch_webcam"
+version = "0.0.1"
+dependencies = [
+  "leglight"
+]
+authors = [
+  { name="Christof Damian", email="christof@damian.net" },
+]
+description = "A small script to watch your webcam and do actions"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: POSIX :: Linux",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+]
+license = { file = "LICENSE" }
+
+[project.scripts]
+watch-webcam = "watch_webcam:main"
+
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"

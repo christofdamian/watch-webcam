@@ -9,6 +9,8 @@ import dbus.service
 import leglight
 from slack import WebClient
 
+from video import Video
+
 allLights = leglight.discover(2)
 
 def slack_meeting(state):
@@ -33,20 +35,6 @@ def slack_meeting(state):
         }
     )
 
-def fuser(filename):
-    return subprocess.check_output(['fuser', '-v', filename], stderr=subprocess.STDOUT)
-
-def video_state(filename):
-    try:
-        output = fuser(filename).decode('utf-8')
-        print(filename+":"+output)
-        return re.search(
-            r'm (cheese|MainThread|firefox|zoom|GeckoMain|teams)',
-            output,
-            re.MULTILINE
-            ) is not None
-    except subprocess.CalledProcessError as e:
-        return False
 
 
 def switch_lights(state):
@@ -80,9 +68,12 @@ def pause_player():
 
 previous_state = None
 
-while True:
-    new_state = video_state('/dev/video0') or video_state('/dev/video1') or video_state('/dev/video2')
+print("test")
 
+video = Video()
+
+while True:
+    new_state = video.is_on()
     if new_state:
         xscreensaver_off()
 
