@@ -22,7 +22,7 @@ classifiers = [
 license = { file = "LICENSE" }
 
 [project.scripts]
-watch-webcam = "watch_webcam:main"
+watch-webcam = "watch_webcam:cli:main"
 
 [project.urls]
 Homepage = "https://github.com/pypa/sampleproject"
