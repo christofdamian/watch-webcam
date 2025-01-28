@@ -10,6 +10,7 @@ import leglight
 from slack import WebClient
 
 from video import Video
+from xscreensaver import XScreenSaver
 
 allLights = leglight.discover(2)
 
@@ -46,10 +47,6 @@ def switch_lights(state):
         else:
             light.off()
 
-def xscreensaver_off():
-    print("switch xscreensaver off")
-    subprocess.run(['xscreensaver-command', '-deactivate'])
-
 def pause_player():
     player_service = None
     bus = dbus.SessionBus()
@@ -66,16 +63,15 @@ def pause_player():
         except dbus.DBusException as e:
             print("can not find player?" + str(e))
 
-previous_state = None
-
-print("test")
 
 video = Video()
+xscreensaver = XScreenSaver()
 
+previous_state = None
 while True:
     new_state = video.is_on()
     if new_state:
-        xscreensaver_off()
+        xscreensaver.deactivate()
 
     if new_state != previous_state:
         switch_lights(new_state)
