@@ -1,0 +1,26 @@
+video:
+  devices:
+    - /dev/video0
+    - /dev/video1
+    - /dev/video2
+  applications:
+    - cheese
+    - MainThread
+    - firefox
+    - zoom
+    - GeckoMain
+    - teams
+    - chrome
+    - slack
+    - test
+
+xscreensaver:
+  enabled: true
+
+media:
+  enabled: true
+
+light:
+  enabled: true
+  brightness: 10
+  color: 5500

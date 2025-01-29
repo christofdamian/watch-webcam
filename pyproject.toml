@@ -6,7 +6,8 @@ build-backend = "setuptools.build_meta"
 name = "watch_webcam"
 version = "0.0.1"
 dependencies = [
-  "leglight"
+  "leglight",
+  "pyyaml",
 ]
 authors = [
   { name="Christof Damian", email="christof@damian.net" },
@@ -22,7 +23,7 @@ classifiers = [
 license = { file = "LICENSE" }
 
 [project.scripts]
-watch-webcam = "watch_webcam:cli:main"
+watch-webcam = "watch_webcam:cli.main"
 
 [project.urls]
 Homepage = "https://github.com/pypa/sampleproject"

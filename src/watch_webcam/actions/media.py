@@ -4,8 +4,9 @@ import re
 import dbus
 import dbus.service
 
+from watch_webcam.actions.base import Base
 
-class Media:
+class Media(Base):
     """Class to find and pause media player"""
 
     def find_player_service(self):
@@ -26,3 +27,8 @@ class Media:
                 player.Pause()
             except dbus.DBusException as error:
                 print("Can not find player? ", type(error).__name__, "–", error)
+
+    def switch(self, new_state):
+        """Overriding the base class to pause the player, whenever a camera is on"""
+        if new_state:
+            self.pause_player()

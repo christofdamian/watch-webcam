@@ -2,7 +2,9 @@
 
 import subprocess
 
-class XScreenSaver: # pylint: disable=too-few-public-methods
+from watch_webcam.actions.base import Base
+
+class XScreenSaver(Base):
     """Class to control XScreenSaver"""
 
     def deactivate(self):
@@ -12,3 +14,7 @@ class XScreenSaver: # pylint: disable=too-few-public-methods
             stdout=subprocess.DEVNULL,
             check=False
         )
+
+    def while_on(self):
+        """Overriding base method, which is called while camera is on"""
+        self.deactivate()
