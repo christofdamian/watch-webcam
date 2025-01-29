@@ -12,7 +12,6 @@ video:
     - teams
     - chrome
     - slack
-    - test
 
 xscreensaver:
   enabled: true
