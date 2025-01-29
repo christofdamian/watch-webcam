@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "watch_webcam"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
   "leglight",
   "pyyaml",
@@ -26,5 +26,5 @@ license = { file = "LICENSE" }
 watch-webcam = "watch_webcam:cli.main"
 
 [project.urls]
-Homepage = "https://github.com/pypa/sampleproject"
-Issues = "https://github.com/pypa/sampleproject/issues"
+Homepage = "https://github.com/christofdamian/watch-webcam"
+Issues = "https://github.com/christofdamian/watch-webcam/issues"
