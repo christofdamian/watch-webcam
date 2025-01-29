@@ -12,7 +12,8 @@ from watch_webcam.actions.xscreensaver import XScreenSaver
 from watch_webcam.actions.media import Media
 from watch_webcam.actions.light import Light
 
-ACTIONS=[XScreenSaver, Media, Light]
+ACTIONS = [XScreenSaver, Media, Light]
+
 
 def main():
     """Main entry point for the watch-webcam"""

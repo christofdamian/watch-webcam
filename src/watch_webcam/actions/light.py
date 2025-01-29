@@ -1,8 +1,10 @@
 """Module to handle switching all Elgato lights"""
 
+
 import leglight
 
 from watch_webcam.actions.base import Base
+
 
 class Light(Base):
     """Class to handle switching all Elgato lights"""

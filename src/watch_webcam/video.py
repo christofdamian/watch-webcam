@@ -1,6 +1,8 @@
 """This module checks video devices for access by video call software"""
 
+
 import subprocess
+
 
 class Video:
     """This class handles checking the applications accessing video devices"""
@@ -31,12 +33,13 @@ class Video:
             ['fuser', '-v', filename],
             check=False,
             capture_output=True).stderr.decode("utf-8")
+
     def video_state(self, filename):
-        """Returns if the video device is currently accessed by one of the applications"""
+        """Returns if the device is currently accessed by an applications"""
 
         output = self.fuser(filename)
-        return any(output.find(program)>=0 for program in self.applications)
+        return any(output.find(program) >= 0 for program in self.applications)
 
     def is_on(self):
-        """Checks if any of the devices are currently accessed by one of the applications"""
+        """Checks if any device is currently accessed by an applications"""
         return any(self.video_state(filename) for filename in self.devices)

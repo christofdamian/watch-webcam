@@ -1,5 +1,6 @@
 """Module for the action base class"""
 
+
 class Base:
     """This class only provides default stubs for the availble methods"""
 
@@ -10,4 +11,4 @@ class Base:
         """This is called in every loop, while a camera is on"""
 
     def switch(self, new_state):
-        """This is called when the state switches between on/off (True/False)"""
+        """This is called when the state switches between on/off"""

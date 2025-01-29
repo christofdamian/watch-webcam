@@ -1,8 +1,10 @@
 """Module to control XScreenSaver"""
 
+
 import subprocess
 
 from watch_webcam.actions.base import Base
+
 
 class XScreenSaver(Base):
     """Class to control XScreenSaver"""
