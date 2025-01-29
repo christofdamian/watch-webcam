@@ -1,15 +1,18 @@
 """Module to handle switching all Elgato lights"""
 
 
+import logging
 import leglight
 
 from watch_webcam.actions.base import Base
+
+logger = logging.getLogger(__name__)
 
 
 class Light(Base):
     """Class to handle switching all Elgato lights"""
 
-    def __init__(self, brightness=10, color=5500, discovery_timeout=10):
+    def __init__(self, brightness=10, color=5500, discovery_timeout=5):
         self.brightness = brightness
         self.color = color
         self.discovery_timeout = discovery_timeout
@@ -19,7 +22,8 @@ class Light(Base):
         """Discover lights"""
         self.all_lights = leglight.discover(timeout=self.discovery_timeout)
 
-        print(self.all_lights)
+        if not self.all_lights:
+            logger.warning("No lights discovered")
 
     def on(self):
         """Switch all lights on"""
