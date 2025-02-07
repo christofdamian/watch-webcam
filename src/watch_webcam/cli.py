@@ -7,14 +7,13 @@ import time
 import logging
 import yaml
 
-
-from watch_webcam.video import Video
+from video import Video
 from watch_webcam.actions.xscreensaver import XScreenSaver
 from watch_webcam.actions.media import Media
 from watch_webcam.actions.light import Light
 
 logging.basicConfig(format="%(levelname)s: %(message)s")
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("logger")
 
 ACTIONS = [XScreenSaver, Media, Light]
 

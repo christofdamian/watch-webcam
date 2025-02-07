@@ -6,7 +6,7 @@ import leglight
 
 from watch_webcam.actions.base import Base
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("logger")
 
 
 class Light(Base):
@@ -21,6 +21,10 @@ class Light(Base):
     def discover(self):
         """Discover lights"""
         self.all_lights = leglight.discover(timeout=self.discovery_timeout)
+
+        logger.info("Discovered %d lights", len(self.all_lights))
+        for light in self.all_lights:
+            logger.debug("Found light: %s", light)
 
         if not self.all_lights:
             logger.warning("No lights discovered")

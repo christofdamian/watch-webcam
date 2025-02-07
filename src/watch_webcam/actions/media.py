@@ -2,10 +2,13 @@
 
 
 import re
+import logging
 import dbus
 import dbus.service
 
 from watch_webcam.actions.base import Base
+
+logger = logging.getLogger("logger")
 
 
 class Media(Base):
@@ -33,10 +36,9 @@ class Media(Base):
             try:
                 player.Pause()
             except dbus.DBusException as error:
-                print(
-                    "Can not find player? ",
+                logger.warning(
+                    "Can not find player? %s - %s",
                     type(error).__name__,
-                    "–",
                     error
                 )
 
