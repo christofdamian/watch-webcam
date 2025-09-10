@@ -43,13 +43,13 @@ def main():
             del params["enabled"]
             actions.append(action(**params))
 
+    for action in actions:
+        action.discover()
+
     logger.info("Entering busy loop")
 
     previous_state = None
     while True:
-        for action in actions:
-            action.discover()
-
         new_state = video.is_on()
         if new_state:
             for action in actions:
