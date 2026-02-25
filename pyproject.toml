@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "watch_webcam"
-version = "0.0.3"
+version = "0.0.4"
 dependencies = [
   "leglight",
   "pyyaml",

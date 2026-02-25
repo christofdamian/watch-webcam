@@ -11,11 +11,12 @@ from watch_webcam.video import Video
 from watch_webcam.actions.xscreensaver import XScreenSaver
 from watch_webcam.actions.media import Media
 from watch_webcam.actions.light import Light
+from watch_webcam.actions.script import Script
 
 logging.basicConfig(format="%(levelname)s: %(message)s")
 logger = logging.getLogger("logger")
 
-ACTIONS = [XScreenSaver, Media, Light]
+ACTIONS = [XScreenSaver, Media, Light, Script]
 
 
 def main():

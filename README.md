@@ -5,6 +5,7 @@ Simple script to watch the status of the webcam and do some actions.
 - switches all Elgato key lights on/off
 - pauses music player at start of call
 - disables xscreensaver during call
+- runs custom scripts on webcam on/off events
 
 You can configure it with a config file, the default looks like this:
 ```
@@ -33,6 +34,14 @@ light:
   enabled: true
   brightness: 10
   color: 5500
+
+script:
+  enabled: true
+  on:
+    - /path/to/on-script1.sh
+    - /path/to/on-script2.sh
+  off:
+    - /path/to/off-script.sh
 ```
 
 The config file is also the only option of the command:
