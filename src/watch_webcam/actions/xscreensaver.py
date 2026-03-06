@@ -10,6 +10,8 @@ from watch_webcam.actions.base import Base
 class XScreenSaver(Base):
     """Class to control XScreenSaver"""
 
+    config_key = "xscreensaver"
+
     def deactivate(self):
         """Deactivate XScreenSaver - pretending that the user is active"""
         if not os.environ.get('DISPLAY'):

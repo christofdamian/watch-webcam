@@ -4,6 +4,8 @@
 class Base:
     """This class only provides default stubs for the availble methods"""
 
+    config_key = None
+
     def discover(self):
         """This is called before the main method to discover devices"""
 

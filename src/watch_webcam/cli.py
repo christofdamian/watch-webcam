@@ -39,7 +39,7 @@ def main():
 
     actions = []
     for action in ACTIONS:
-        params = config[action.__name__.lower()]
+        params = config[action.config_key]
         if params["enabled"]:
             del params["enabled"]
             actions.append(action(**params))

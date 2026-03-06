@@ -14,6 +14,8 @@ logger = logging.getLogger("logger")
 class Media(Base):
     """Class to find and pause media player"""
 
+    config_key = "media"
+
     def find_player_service(self):
         """Find media service"""
         bus = dbus.SessionBus()

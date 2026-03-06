@@ -12,6 +12,8 @@ logger = logging.getLogger("logger")
 class Script(Base):
     """Class to run configurable scripts when webcam turns on or off"""
 
+    config_key = "script"
+
     def __init__(self, on=None, off=None):
         self.on_scripts = on or []
         self.off_scripts = off or []

@@ -13,6 +13,8 @@ logger = logging.getLogger("logger")
 class Light(Base):
     """Class to handle switching all Elgato lights"""
 
+    config_key = "light"
+
     def __init__(self, brightness=10, color=5500, discovery_timeout=5, max_retries=3, retry_delay=2):
         self.brightness = brightness
         self.color = color
