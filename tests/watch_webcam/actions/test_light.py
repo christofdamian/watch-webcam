@@ -42,15 +42,17 @@ def test_discover_with_lights(mock_discover, mock_light):
     assert light_controller.all_lights[0] == mock_light
 
 
+@patch('watch_webcam.actions.light.time.sleep')
 @patch('watch_webcam.actions.light.leglight.discover')
-def test_discover_no_lights(mock_discover):
+def test_discover_no_lights(mock_discover, mock_sleep):
     """Test discover method when no lights are found"""
     mock_discover.return_value = []
 
-    light_controller = Light()
+    light_controller = Light(max_retries=3, retry_delay=2)
     light_controller.discover()
 
-    mock_discover.assert_called_once_with(timeout=5)
+    assert mock_discover.call_count == 3
+    mock_discover.assert_called_with(timeout=5)
     assert light_controller.all_lights == []
 
 
