@@ -43,6 +43,7 @@ class Light(Base):
 
     def on(self):
         """Switch all lights on"""
+        logger.info("Switching %d lights on", len(self.all_lights))
         for light in self.all_lights:
             light.brightness(self.brightness)
             light.color(self.color)
@@ -50,6 +51,7 @@ class Light(Base):
 
     def off(self):
         """Switch all lights off"""
+        logger.info("Switching %d lights off", len(self.all_lights))
         for light in self.all_lights:
             light.off()
 

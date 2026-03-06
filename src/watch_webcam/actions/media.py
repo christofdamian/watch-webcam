@@ -31,6 +31,7 @@ class Media(Base):
 
         player_service = self.find_player_service()
         if player_service:
+            logger.info("Pausing media player")
             player = dbus.Interface(
                 player_service,
                 'org.mpris.MediaPlayer2.Player'

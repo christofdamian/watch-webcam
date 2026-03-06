@@ -1,10 +1,13 @@
 """Module to control XScreenSaver"""
 
 
+import logging
 import os
 import subprocess
 
 from watch_webcam.actions.base import Base
+
+logger = logging.getLogger("logger")
 
 
 class XScreenSaver(Base):
@@ -24,4 +27,5 @@ class XScreenSaver(Base):
 
     def while_on(self):
         """Overriding base method, which is called while camera is on"""
+        logger.debug("Deactivating xscreensaver")
         self.deactivate()

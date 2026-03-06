@@ -20,6 +20,7 @@ class Script(Base):
 
     def run(self, script):
         """Run a script, logging any errors"""
+        logger.info("Running script: %s", script)
         try:
             subprocess.run(script, check=True, shell=True)
         except subprocess.CalledProcessError as error:
