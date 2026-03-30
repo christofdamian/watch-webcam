@@ -1,3 +1,6 @@
+⚠️ **This repository has moved to Codeberg: https://codeberg.org/cdamian/watch-webcam**
+
+This GitHub repository is archived and no longer maintained here.
 # watch-webcam
 
 Simple script to watch the status of the webcam and do some actions.
